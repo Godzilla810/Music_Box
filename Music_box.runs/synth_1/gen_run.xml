@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1686898619" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/music.dcp">
-  <File Type="PA-TCL" Name="song.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="song_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="song_reports.tcl"/>
-  <File Type="RDS-RDS" Name="song.vds"/>
-  <File Type="RDS-UTIL" Name="song_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="song_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="song.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="song_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="song_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1686904068" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/music.dcp">
+  <File Type="PA-TCL" Name="control.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="control_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="control_reports.tcl"/>
+  <File Type="RDS-RDS" Name="control.vds"/>
+  <File Type="RDS-UTIL" Name="control_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="control_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="control.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="control_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="control_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/pitch.vh">
@@ -18,14 +18,28 @@
         <Attr Name="IsVisible" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/song_idol.v">
+    <File Path="$PSRCDIR/sources_1/new/demo.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/demo.v">
+    <File Path="$PSRCDIR/sources_1/new/speaker.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/control.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/song_idol.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -35,7 +49,8 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="song"/>
+      <Option Name="TopModule" Val="control"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

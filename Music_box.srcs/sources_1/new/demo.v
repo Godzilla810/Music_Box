@@ -1,15 +1,14 @@
 `include "pitch.vh"
-module music(clk, BTN, btn, speaker);
+module music(clk, BTN, btn, clkdivider);
 input clk;
 input [3:0] BTN;
 input [7:0] btn;
-output reg speaker;
+output reg [18:0] clkdivider;
 
 //按鍵定義
-reg [18:0] clkdivider;
-
 always @(*) begin
     case(btn)
+        default : clkdivider<=`_;
         8'b00000001 : clkdivider<=`F6;
         8'b00000010 : clkdivider<=`E6;
         8'b00000100 : clkdivider<=`D6;
@@ -21,16 +20,9 @@ always @(*) begin
     endcase
 end
 //發聲器
-reg [18:0] counter;
-always @(posedge clk) begin
-    if (btn != 0) begin
-        if(counter==0) begin
-            counter <= clkdivider-1;
-            speaker <= ~speaker;
-            end
-        else counter <= counter-1;
-    end
-    else
-        speaker <= 0;
-end
+//speaker s1(
+//    .clk        (clk),
+//    .clkdivider (clkdivider),
+//    .speaker    (speaker)
+//    );
 endmodule

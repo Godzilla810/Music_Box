@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log song.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source song.tcl
+    with args -log control.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source control.tcl
 
 
 
@@ -9,11 +9,11 @@
   **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
-source song.tcl -notrace
+source control.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/utils_1/imports/synth_1/music.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/utils_1/imports/synth_1/music.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-Command: synth_design -top song -part xc7z020clg400-1
+Command: synth_design -top control -part xc7z020clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
@@ -22,27 +22,35 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 19264
+INFO: [Synth 8-7075] Helper process launched with PID 13488
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1235.488 ; gain = 408.406
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1235.953 ; gain = 408.438
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'song' [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/song_idol.v:2]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/song_idol.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'song' (0#1) [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/song_idol.v:2]
+INFO: [Synth 8-6157] synthesizing module 'control' [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/control.v:1]
+INFO: [Synth 8-6157] synthesizing module 'music' [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/demo.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'music' (0#1) [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/demo.v:2]
+INFO: [Synth 8-6157] synthesizing module 'speaker' [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/speaker.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'speaker' (0#1) [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/speaker.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'control' (0#1) [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/control.v:1]
+WARNING: [Synth 8-7129] Port clk in module music is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BTN[3] in module music is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BTN[2] in module music is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BTN[1] in module music is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BTN[0] in module music is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1325.086 ; gain = 498.004
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1325.172 ; gain = 497.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1325.086 ; gain = 498.004
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1325.172 ; gain = 497.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1325.086 ; gain = 498.004
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1325.172 ; gain = 497.656
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1325.086 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1325.172 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -63,92 +71,49 @@ Resolution: If [get_<value>] was used to populate the object, check to make sure
 WARNING: [Vivado 12-584] No ports matched 'led[3]'. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:34]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:34]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BTN[0]'. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:38]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:38]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BTN[1]'. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:39]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:39]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BTN[2]'. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:40]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:40]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BTN[3]'. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:41]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:41]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[7]'. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:45]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:45]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[6]'. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:46]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:46]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[5]'. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:47]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:47]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[4]'. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:48]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:48]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[3]'. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:49]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:49]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[2]'. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:50]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:50]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[1]'. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:51]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:51]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[0]'. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:52]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc:52]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/song_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/song_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/constrs_1/new/demo.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/control_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/control_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1412.977 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1350.902 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1412.977 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1350.902 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1412.977 ; gain = 585.895
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 1350.902 ; gain = 523.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1412.977 ; gain = 585.895
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 1350.902 ; gain = 523.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1412.977 ; gain = 585.895
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 1350.902 ; gain = 523.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1412.977 ; gain = 585.895
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 1350.902 ; gain = 523.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   31 Bit       Adders := 1     
 	   2 Input   19 Bit       Adders := 1     
-	   2 Input    8 Bit       Adders := 1     
 +---Registers : 
-	               31 Bit    Registers := 1     
 	               19 Bit    Registers := 1     
-	               18 Bit    Registers := 1     
-	                8 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
 +---Muxes : 
-	  35 Input   18 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 1     
-	  35 Input    1 Bit        Muxes := 1     
+	   9 Input   17 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -165,40 +130,30 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port BTN[3] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BTN[2] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BTN[1] in module control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BTN[0] in module control is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 1412.977 ; gain = 585.895
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP, Shift Register and Retiming Reporting
----------------------------------------------------------------------------------
-
-ROM: Preliminary Mapping Report
-+------------+------------+---------------+----------------+
-|Module Name | RTL Object | Depth x Width | Implemented As | 
-+------------+------------+---------------+----------------+
-|song        | clkdivider | 64x18         | LUT            | 
-+------------+------------+---------------+----------------+
-
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 1350.902 ; gain = 523.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:19 . Memory (MB): peak = 1412.977 ; gain = 585.895
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 1350.902 ; gain = 523.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 1412.977 ; gain = 585.895
+Finished Timing Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 1356.301 ; gain = 528.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 1412.977 ; gain = 585.895
+Finished Technology Mapping : Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 1356.820 ; gain = 529.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -216,37 +171,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:22 . Memory (MB): peak = 1412.977 ; gain = 585.895
+Finished IO Insertion : Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 1362.637 ; gain = 535.121
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:22 . Memory (MB): peak = 1412.977 ; gain = 585.895
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 1362.637 ; gain = 535.121
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:22 . Memory (MB): peak = 1412.977 ; gain = 585.895
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 1362.637 ; gain = 535.121
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:22 . Memory (MB): peak = 1412.977 ; gain = 585.895
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 1362.637 ; gain = 535.121
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:22 . Memory (MB): peak = 1412.977 ; gain = 585.895
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 1362.637 ; gain = 535.121
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:22 . Memory (MB): peak = 1412.977 ; gain = 585.895
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 1362.637 ; gain = 535.121
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -263,40 +218,39 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    13|
-|3     |LUT1   |    33|
+|2     |CARRY4 |     5|
+|3     |LUT1   |     2|
 |4     |LUT2   |     4|
-|5     |LUT3   |    38|
-|6     |LUT4   |     3|
-|7     |LUT5   |     8|
-|8     |LUT6   |    25|
-|9     |FDRE   |    69|
-|10    |FDSE   |     8|
-|11    |IBUF   |     1|
-|12    |OBUF   |     1|
+|5     |LUT3   |    15|
+|6     |LUT4   |     6|
+|7     |LUT5   |    12|
+|8     |LUT6   |    29|
+|9     |FDRE   |    20|
+|10    |IBUF   |     9|
+|11    |OBUF   |     1|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:22 . Memory (MB): peak = 1412.977 ; gain = 585.895
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 1362.637 ; gain = 535.121
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:20 . Memory (MB): peak = 1412.977 ; gain = 498.004
-Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:22 . Memory (MB): peak = 1412.977 ; gain = 585.895
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:04 ; elapsed = 00:00:17 . Memory (MB): peak = 1362.637 ; gain = 509.391
+Synthesis Optimization Complete : Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 1362.637 ; gain = 535.121
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1412.977 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1374.668 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1412.977 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1378.355 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 9464c5ab
+Synth Design complete, checksum: aef9e5e9
 INFO: [Common 17-83] Releasing license: Synthesis
-26 Infos, 18 Warnings, 17 Critical Warnings and 0 Errors encountered.
+29 Infos, 15 Warnings, 5 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:26 . Memory (MB): peak = 1412.977 ; gain = 993.281
+synth_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:22 . Memory (MB): peak = 1378.355 ; gain = 957.906
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-INFO: [Common 17-1381] The checkpoint 'C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.runs/synth_1/song.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file song_utilization_synth.rpt -pb song_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jun 16 14:57:31 2023...
+INFO: [Common 17-1381] The checkpoint 'C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.runs/synth_1/control.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file control_utilization_synth.rpt -pb control_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 16 16:28:17 2023...
