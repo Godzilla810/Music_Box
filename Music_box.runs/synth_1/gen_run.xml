@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1686896573" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/music.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1686898619" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/music.dcp">
   <File Type="PA-TCL" Name="song.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="song_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="song_reports.tcl"/>
@@ -11,6 +11,13 @@
   <File Type="VDS-TIMING-PB" Name="song_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/pitch.vh">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/song_idol.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>

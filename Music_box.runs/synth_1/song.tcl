@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
 
@@ -86,6 +87,7 @@ set_property ip_output_repo c:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.c
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
+read_verilog C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/pitch.vh
 read_verilog -library xil_defaultlib C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/song_idol.v
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
