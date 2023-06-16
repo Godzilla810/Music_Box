@@ -4,15 +4,28 @@ module control (
     input [7:0] btn,
     output speaker
     );
-wire [18:0] clkdivider;
+reg [18:0] clkdivider;
+wire [18:0] clkdivider1,clkdivider2;
+always @(posedge clk) begin
+    if (BTN == 4'b0001)
+        clkdivider <= clkdivider1;
+    else
+        clkdivider <= clkdivider2;
+end
 music m1(
     .clk        (clk),
     .BTN        (BTN),
     .btn        (btn),
-    .clkdivider (clkdivider)
+    .clkdivider (clkdivider1)
+    );
+    
+song s1(
+    .clk        (clk),
+    .BTN        (BTN),
+    .clkdivider (clkdivider2)
     );
 
-speaker s1(
+speaker spk1(
     .clk        (clk),
     .clkdivider (clkdivider),
     .speaker    (speaker)

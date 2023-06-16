@@ -19,10 +19,4 @@ always @(*) begin
         8'b10000000 : clkdivider<=`E;
     endcase
 end
-//µoÁn¾¹
-//speaker s1(
-//    .clk        (clk),
-//    .clkdivider (clkdivider),
-//    .speaker    (speaker)
-//    );
 endmodule

@@ -1,14 +1,20 @@
 `include "pitch.vh"
-module song(clk, speaker);
+module song(clk, BTN, clkdivider);
 input clk;
-output speaker;
-reg [18:0] clkdivider;
-reg [18:0] counter;
+input [3:0] BTN;
+output reg [18:0] clkdivider;
 reg [30:0] counter_note;
 reg custom_clk;
-reg speaker;
-reg  [7:0] note;
-
+//節拍
+always @(posedge clk) begin
+    if(counter_note==0) begin
+        counter_note <= 10_000_000;
+        custom_clk <= ~custom_clk;
+        end
+    else counter_note <= counter_note-1;
+end
+//曲子
+reg  [7:0] note;    //小節數
 always @(posedge custom_clk) begin
     case(note)
         1:clkdivider <= `E;
@@ -148,21 +154,5 @@ always @(posedge custom_clk) begin
     note<=note+1;
 end
 
-//節拍
-always @(posedge clk) begin
-    if(counter_note==0) begin
-        counter_note <= 10_000_000;
-        custom_clk <= ~custom_clk;
-        end
-    else counter_note <= counter_note-1;
-end
-//發聲
-always @(posedge clk) begin
-    if(counter==0) begin
-        counter <= clkdivider-1;
-        speaker <= ~speaker;
-        end
-    else counter <= counter-1;
-end
 
 endmodule
