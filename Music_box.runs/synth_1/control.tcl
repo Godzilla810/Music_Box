@@ -92,6 +92,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/demo.v
   C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/song_idol.v
   C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/speaker.v
+  C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/state.v
   C:/Users/HMG/Desktop/Github/01_Music_Box/Music_box.srcs/sources_1/new/control.v
 }
 OPTRACE "Adding files" END { }
